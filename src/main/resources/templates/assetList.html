@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Room List</title>
+    <link rel = "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div class="container-fluid text-center">
+
+    <div><h1>Manage Asset</h1></div>
+
+    <a href="/assetList1K">Cac tai san co gia tri hon 10 trieu</a>
+
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Mã</th>
+                <th>Tên tài sản</th>
+                <th>Loại Tài Sản</th>
+                <th>Vị trí hiện tại</th>
+                <th>Giá (Triệu Đồng)</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="asset : ${listAssets}">
+
+                <tr>
+                    <td>[[${asset.id}]]</td>
+                    <td>[[${asset.name}]]</td>
+                    <td>[[${asset.type}]]</td>
+                    <td>[[${asset.currentLocation}]]</td>
+                    <td>[[${asset.price}]]</td>
+                </tr>
+
+            </th:block>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+</body>
+
+</html>
